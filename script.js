@@ -100,20 +100,19 @@ function displayCountry(country) {
                 </div>
             </div>
 
-           // <div class="country-links">
+             <div class="country-links">
                 <a href="${
-                  country.maps.googleMaps
-                }" target="_blank" class="map-link">
-                    📍 View on Google Maps
-                </a> //
-                ${
                   country.maps.openStreetMaps
-                    ? `<a href="${country.maps.openStreetMaps}" target="_blank" class="map-link">
-                        🗺️ View on OpenStreetMap
-                    </a>`
-                    : ""
-                }
+                }" target="_blank" class="map-link">
+                    <i class="fas fa-map"></i> View on OpenStreetMap
+                </a>
+                <button class="weather-btn" onclick="showWeather('${
+                  country.capital?.[0] || country.name.common
+                }', '${country.cca2}')">
+                    <i class="fas fa-cloud-sun"></i> Check Weather
+                </button>
             </div>
+        </div>
         
        
 
