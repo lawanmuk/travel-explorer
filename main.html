@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🌍 Travel Explorer</h1>
+      <p class="subtitle">Discover countries around the world</p>
+    </header>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter a country name (e.g., France, Japan,)..."
+        autocomplete="off">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+
+  <div class="result-container">
+      <div id="result">
+        <div class="loading">
+          <p style="color:rgba(255, 0, 0, 0.775)">Enter a country name to get started! </p>
+          <p style="font-size: 14px; margin-top: 10px; color: #2162bd;">
+            Try: Italy, Nigeria, Australia, Japan...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
