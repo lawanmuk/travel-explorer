@@ -100,12 +100,12 @@ function displayCountry(country) {
                 </div>
             </div>
 
-            <div class="country-links">
+           // <div class="country-links">
                 <a href="${
                   country.maps.googleMaps
                 }" target="_blank" class="map-link">
                     📍 View on Google Maps
-                </a>
+                </a> //
                 ${
                   country.maps.openStreetMaps
                     ? `<a href="${country.maps.openStreetMaps}" target="_blank" class="map-link">
