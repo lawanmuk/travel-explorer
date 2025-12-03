@@ -1,12 +1,12 @@
 // my weather js docs to get weather info ---
 
 async function showWeather(city, countryCode) {
-  let modal = document.getElementById('weatherModal');
+  let modal = document.getElementById("weatherModal");
   if (modal) {
-    modal.style.display = 'flex';
+    modal.style.display = "flex";
   }
-  
-  let weatherDataElement = document.getElementById('weatherData');
+
+  let weatherDataElement = document.getElementById("weatherData");
   if (weatherDataElement) {
     weatherDataElement.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
@@ -14,21 +14,20 @@ async function showWeather(city, countryCode) {
       </div>
     `;
   }
-  
+
   try {
-    
     let weatherUrl = `https://wttr.in/${encodeURIComponent(city)}?format=j1`;
-    
+
     let response = await fetch(weatherUrl);
-    
+
     if (!response.ok) {
-      throw new Error('Weather data not available');
+      throw new Error("Weather data not available");
     }
-    
+
     let weatherData = await response.json();
     displayWeather(weatherData, city);
   } catch (error) {
-    let weatherDataElement = document.getElementById('weatherData');
+    let weatherDataElement = document.getElementById("weatherData");
     if (weatherDataElement) {
       weatherDataElement.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: 20px;">
@@ -49,8 +48,8 @@ function displayWeather(weatherData, city) {
   let description = current.weatherDesc[0].value;
   let pressure = current.pressure;
   let visibility = current.visibility;
-  
-  let weatherDataElement = document.getElementById('weatherData');
+
+  let weatherDataElement = document.getElementById("weatherData");
   if (weatherDataElement) {
     weatherDataElement.innerHTML = `
       <div class="weather-item" style="grid-column: 1/-1; text-align: center;">
@@ -90,17 +89,17 @@ function displayWeather(weatherData, city) {
 }
 
 function closeWeatherModal() {
-  let modal = document.getElementById('weatherModal');
+  let modal = document.getElementById("weatherModal");
   if (modal) {
-    modal.style.display = 'none';
+    modal.style.display = "none";
   }
 }
 
 // here we close modal when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
-  let modal = document.getElementById('weatherModal');
+document.addEventListener("DOMContentLoaded", function () {
+  let modal = document.getElementById("weatherModal");
   if (modal) {
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (event.target === modal) {
         closeWeatherModal();
       }
