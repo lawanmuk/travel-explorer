@@ -1,3 +1,5 @@
+// script.js (updated - no weather functions)
+
 document.getElementById("searchBtn").addEventListener("click", searchCountry);
 document.getElementById("searchInput").addEventListener("keypress", (e) => {
   if (e.key === "Enter") searchCountry();
@@ -10,7 +12,6 @@ async function searchCountry() {
     return;
   }
 
-  // Show loading state
   document.getElementById("result").innerHTML =
     '<div class="loading">Searching...</div>';
 
@@ -100,7 +101,7 @@ function displayCountry(country) {
                 </div>
             </div>
 
-             <div class="country-links">
+            <div class="country-links">
                 <a href="${
                   country.maps.openStreetMaps
                 }" target="_blank" class="map-link">
@@ -114,12 +115,20 @@ function displayCountry(country) {
             </div>
         </div>
         
-       
-
+        <!-- Weather Modal -->
+        <div id="weatherModal" class="weather-modal">
+            <div class="weather-content">
+                <button class="close-btn" onclick="closeWeatherModal()">&times;</button>
+                <div class="weather-info">
+                    <h3>Weather Information</h3>
+                    <div id="weatherData" class="weather-data">
+                        <!-- Weather data will be inserted here -->
+                    </div>
+                </div>
+            </div>
         </div>
     `;
 }
-
 
 function showError(message) {
   document.getElementById("result").innerHTML = `
@@ -128,5 +137,3 @@ function showError(message) {
         </div>
     `;
 }
-
-
