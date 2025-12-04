@@ -1,4 +1,4 @@
-// script.js (updated - no weather functions)
+// js for the country search....
 
 document.getElementById("searchBtn").addEventListener("click", searchCountry);
 document.getElementById("searchInput").addEventListener("keypress", (e) => {

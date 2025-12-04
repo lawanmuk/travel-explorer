@@ -1,4 +1,4 @@
-// my weather js docs to get weather info ---
+// my weather js docs to get weather info...
 
 async function showWeather(city, countryCode) {
   let modal = document.getElementById("weatherModal");
